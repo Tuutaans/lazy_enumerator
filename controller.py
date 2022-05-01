@@ -5,7 +5,7 @@ from scans.ftp_conn import ftp_conn
 from scans.enum4linux import enum4linux
 from scans.smbclient import smbclient
 from scans.showmount import showmount
-
+from scans.smtp_usr_enum import smtp_usr_enum
 # class Controller:
 #     def __init__(self, port, target, wordlists, tools):
 #         self.port = port
@@ -45,3 +45,6 @@ def controller(target, port, wordlists, tools):
         enum4linux(target)
         smbclient(target)
         showmount(target)
+    elif port == 25:
+        smtp_usr_enum(target)
+        
